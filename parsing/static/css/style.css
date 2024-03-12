@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+
+*{
+  background-color: #2e2d2d;
+  font-family: "Madimi One", sans-serif;
+  color: aliceblue;
+}
+
+.form{    
+  div{    
+    border-radius: 30px;
+  }
+  fieldset{
+    width: 50%;
+    margin-left: 3rem;
+  }  
+  border-style: solid;
+  border-radius: 30px;  
+  margin-top: 3rem;  
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2rem;  
+  label{
+    font-size: 1.5rem;
+    margin-left: 5%;
+  }  
+}
+
+.button {
+  height: 50px;
+  margin: 1rem;
+  margin-left: 30%;
+  width: 120px;
+  background: #333;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;  
+  border: solid #e4e4e4 1px;
+  font-size: 16px;
+  color: rgb(161, 161, 161);
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  border-radius: 5px;
+  background: linear-gradient(145deg, #2e2d2d, rgb(28,28,30)); 
+}
+
+.button:active {
+  -webkit-box-shadow: 1px 1px 13px #1a1b1e, -1px -1px 33px #404041;
+  box-shadow: 1px 1px 13px #20232e, -1px -1px 33px #42444a;
+  color: #d6d6d6;
+  -webkit-transition: 100ms;
+  transition: 100ms;
+}
+
+.checkbox{
+  accent-color: rgb(28,28,30);
+  margin-left: 2rem;
+}
+
+.input {
+  font-weight: 500;
+  font-size: .8vw;
+  color: #fff;
+  background-color: rgb(28,28,30);
+  box-shadow: 0 0 .4vw rgba(0,0,0,0.5), 0 0 0 .15vw transparent;
+  border-radius: 0.4vw;
+  border: none;
+  outline: none;
+  padding: 0.4vw;
+  max-width: 190px;
+  transition: .4s;
+  margin-left: 1rem;
+}
+
+.input:focus {
+  box-shadow: 0 0 0 .15vw rgb(255, 255, 255);
+}
+
+.wrap{
+  width: 30%;
+  margin-left: 2rem;  
+}
+
+.parse_page{
+  display: flex; 
+  font-size: 5rem; 
+  h{
+    padding-top: 4%;
+    padding-left: 2%;
+    width: 80%;
+  }
+}
+
+.response{  
+  p{
+    border-top: solid #fff;    
+    margin-left: 2rem;
+    margin-top: 2rem;
+    a{
+      display: block;
+   }
+  }
+  width: 80%;    
+}
+
+.price{  
+  float: right;
+}

@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="parse_page">
+        <div class="wrap">    
+            <form action="" method="post" class="form">    
+            {% csrf_token %}    
+            {{ form }}
+            <input type="submit" value="find" class="button">
+            </form>
+        </div> 
+        <h>Make a promt to campare prices for any goods</h>        
+    </div> 
+    
+    <div class="response">
+        {% for product_name, product_price, product_url in product %}    
+        <p>        
+            <span class="items">
+                {{ product_name }} 
+                <span class="price">
+                    {{ product_price }}₴ 
+                </span>
+            </span> 
+            <a href="{{ product_url }}" >Click here to see in store</a>           
+        </p>                 
+        {% endfor %}        
+    </div> 
+
+{% endblock %}
+
+
+
