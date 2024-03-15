@@ -21,7 +21,7 @@ def parse(request):
             parse = Parse(form.cleaned_data.get('site'), form.cleaned_data['product'])                  
             parse.make_request()  
             context = zip(parse.cleaned_data_name, parse.cleaned_data_price, parse.cleaned_data_url)                         
-        return render(request, 'parse.html', {"product" : context, 'form':form})        
+            return render(request, 'home.html', {"product" : context})        
 
     elif request.method == 'GET':
         form = SearchForm()

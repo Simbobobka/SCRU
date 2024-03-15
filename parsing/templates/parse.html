@@ -13,19 +13,7 @@
         <h>Make a promt to campare prices for any goods</h>        
     </div> 
     
-    <div class="response">
-        {% for product_name, product_price, product_url in product %}    
-        <p>        
-            <span class="items">
-                {{ product_name }} 
-                <span class="price">
-                    {{ product_price }}₴ 
-                </span>
-            </span> 
-            <a href="{{ product_url }}" >Click here to see in store</a>           
-        </p>                 
-        {% endfor %}        
-    </div> 
+    
 
 {% endblock %}
 

@@ -1,25 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
 
 *{
-  background-color: #2e2d2d;
+  
   font-family: "Madimi One", sans-serif;
   color: aliceblue;
+}
+
+body{
+  background-color: #2e2d2d;
 }
 
 .form{    
   div{    
     border-radius: 30px;
   }
+
   fieldset{
     width: 50%;
     margin-left: 3rem;
-  }  
+  } 
+
   border-style: solid;
   border-radius: 30px;  
   margin-top: 3rem;  
   font-weight: 400;
   font-style: normal;
   font-size: 1.2rem;  
+
   label{
     font-size: 1.5rem;
     margin-left: 5%;
@@ -88,6 +95,7 @@
 .parse_page{
   display: flex; 
   font-size: 5rem; 
+
   h{
     padding-top: 4%;
     padding-left: 2%;
@@ -100,13 +108,52 @@
     border-top: solid #fff;    
     margin-left: 2rem;
     margin-top: 2rem;
+
     a{
       display: block;
    }
   }
+
   width: 80%;    
 }
 
 .price{  
   float: right;
+}
+
+nav {  
+  width: 60rem;  
+  margin: 1rem auto 0;
+}
+
+nav ul {
+  background-color: #575757; 
+  border-radius: 1rem;
+  list-style: none;
+  font-size: 1.5rem;
+  text-align:start;
+  padding-inline-start: 0rem;
+  margin-bottom: 0px;
+}
+
+nav ul li {
+  padding-left: 1%;
+  background-color: #575757; 
+  display: inline-block;
+  margin: 0.5rem;  
+}
+
+nav ul a {
+  color: #EDEFEE;
+  text-decoration: none;
+  background-color: #575757; 
+}
+
+nav ul a:active {
+  text-decoration: underline;
+}
+
+nav ul a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.1rem;
 }
