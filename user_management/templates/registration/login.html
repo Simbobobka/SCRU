@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% load static %}
+{% block content %}
+
+
+<form method="post">    
+    {% csrf_token %}{{ form }}
+    <p>Don`t have an account? Click here to <a href="account/sign-up">register</a></p>
+    <button type="submit" >Login</button>    
+</form>
+
+{% endblock %}

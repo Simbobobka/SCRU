@@ -46,12 +46,12 @@ body{
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;  
-  border: solid #e4e4e4 1px;
+  border: solid #333 1px;
   font-size: 16px;
-  color: rgb(161, 161, 161);
+  color: rgb(255, 255, 255);
   -webkit-transition: 500ms;
   transition: 500ms;
-  border-radius: 5px;
+  border-radius: 1rem;
   background: linear-gradient(145deg, #2e2d2d, rgb(28,28,30)); 
 }
 
@@ -134,19 +134,27 @@ nav ul {
   text-align:start;
   padding-inline-start: 0rem;
   margin-bottom: 0px;
+  span{
+    font-size: 1.2rem;   
+    float: right;    
+    padding-top: 1%;
+    color: lemonchiffon;
+  }    
 }
 
 nav ul li {
   padding-left: 1%;
   background-color: #575757; 
   display: inline-block;
-  margin: 0.5rem;  
+  margin: 0.5rem;   
+  
 }
 
 nav ul a {
   color: #EDEFEE;
   text-decoration: none;
   background-color: #575757; 
+  text-align: right;
 }
 
 nav ul a:active {
@@ -156,4 +164,105 @@ nav ul a:active {
 nav ul a:hover {
   text-decoration: underline;
   text-decoration-thickness: 0.1rem;
+}
+
+#register {
+  float: right;
+}
+
+.btn_reg{
+  background-color: rgb(128, 128, 128);
+  color:rgb(42, 92, 137);
+  
+}
+
+.login_form{
+  background-color: #344559;
+  height: 12rem;
+  width: 20rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);  
+  margin: 1% 5% 5% 5%;
+  input{
+    font-weight: 500;
+    font-size: .8vw;
+    color: #fff;
+    background-color: rgb(28,28,30);
+    box-shadow: 0 0 .4vw rgba(0,0,0,0.5), 0 0 0 .15vw transparent;
+    border-radius: 0.4vw;
+    border: none;
+    outline: none;
+    padding: 0.4vw;
+    max-width: 190px;
+    transition: .4s;
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+  input:focus {
+    box-shadow: 0 0 0 .15vw rgb(255, 255, 255);
+  }
+  div{
+    margin-top: 1%;
+    margin-left: 30px;
+  }
+  button{
+    height: 50px;
+    margin-top: 1%; 
+    margin-left: 30px;
+   
+    width: 120px;
+    background: #333;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;  
+    border: solid #333 1px;
+    font-size: 16px;
+    color: rgb(249, 249, 249);
+    -webkit-transition: 500ms;
+    transition: 500ms;
+    border-radius: 1rem;
+    background: linear-gradient(145deg, #2e2d2d, rgb(28,28,30)); 
+  }
+  button:active {
+    -webkit-box-shadow: 1px 1px 13px #1a1b1e, -1px -1px 33px #404041;
+    box-shadow: 1px 1px 13px #20232e, -1px -1px 33px #42444a;
+    color: #d6d6d6;
+    -webkit-transition: 100ms;
+    transition: 100ms;
+  }
+  p{
+    margin-bottom: 0;
+    font-size: 0.8rem;
+    margin-left: 30px;
+  }
+}
+
+.logout_form{
+  button{
+    width: 70px;
+    background: #333;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;  
+    border: solid #333 1px;
+    font-size: 16px;
+    color: rgb(249, 142, 142);
+    -webkit-transition: 500ms;
+    transition: 500ms;
+    border-radius: 1rem;
+    background: linear-gradient(145deg, #2e2d2d, rgb(28,28,30));         
+    margin-bottom: 5%;
+    margin-top: 0;
+  }
+  float: right;
+  margin-right: 3%;
+  margin-top: 0.2rem;
 }

@@ -3,5 +3,20 @@
   <ul>
     <li><a href="{% url 'home' %}">Home</a></li>
     <li><a href="{% url 'parse' %}">Parse</a></li>    
-  </ul>
+    {% if user.is_authenticated %}
+
+      
+
+      <li class="logout_form">
+        <form class ="logout_form" method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">logout</button>
+       </form>
+      </li>
+      <span>{{ user.username }} |</span> 
+
+    {% else %}
+      <li id="register"><a href="{% url 'login' %}">Login</a></li>
+    {% endif %}
+  </ul>   
 </nav>

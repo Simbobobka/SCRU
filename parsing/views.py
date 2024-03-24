@@ -9,6 +9,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .services import Parse
 
+
 @api_view(['GET'])
 def index(request): 
     return render(request, 'index.html') 
