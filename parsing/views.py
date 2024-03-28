@@ -1,13 +1,15 @@
 from django.shortcuts import render, redirect
-
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 from bs4 import BeautifulSoup
 import requests
-import re
 from .forms import SearchForm
-from rest_framework.response import Response
-from rest_framework import status
 from .services import Parse
+from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
+from .models import SavedGoods
+from django.contrib.auth.decorators import login_required
+
 
 
 @api_view(['GET'])
@@ -27,3 +29,16 @@ def parse(request):
     elif request.method == 'GET':
         form = SearchForm()
         return render(request, 'parse.html', {'form':form})
+
+@login_required()
+def save_good(request):    
+    if request.method == 'POST':        
+        name = request.POST.get('product_name')
+        price = request.POST.get('product_price')
+        url = request.POST.get('product_url')
+        
+        SavedGoods.objects.create(user=request.user, title=name, price=price, url=url)
+        
+        return redirect('home')
+    return redirect('home')
+ 
