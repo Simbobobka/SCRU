@@ -13,8 +13,8 @@ class Parse():
         'olx': 'css-16v5mdi er34gjf0'
     }    
     site_classes_of_price = {        
-        'prom': 'yzKb6',        
-        'allo': 'sum',
+        'prom': 'bkjEo',        
+        'allo': 'v-pb__cur',
         'olx': 'css-10b0gli er34gjf0'
     }
     site_classes_of_url = {        
@@ -48,11 +48,11 @@ class Parse():
     def take_name(self, site_name, soup):
         self.product_data = soup.find_all(class_ = self.site_classes_of_names[site_name])         
         for data in self.product_data:            
-            self.cleaned_data_name.append(data.text + ' ' + site_name)          
+            self.cleaned_data_name.append(data.text + ' in the store - ' + site_name)          
     
     def take_product_url(self, site_name, soup):
-        if site_name == 'prom':
-            self.product_data = soup.find_all('a', class_ = self.site_classes_of_url[site_name], target='_self')# only for Prom site due to difference    
+        if site_name == 'prom': # only for Prom site due to difference   
+            self.product_data = soup.find_all('a', class_ = self.site_classes_of_url[site_name], target='_self') 
         else: 
             self.product_data = soup.find_all('a', class_ = self.site_classes_of_url[site_name])    
 

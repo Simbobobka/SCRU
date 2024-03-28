@@ -4,6 +4,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 
 
+
 def sign_up(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
