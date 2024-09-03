@@ -1,22 +1,14 @@
 from django.shortcuts import render, redirect
-from rest_framework.decorators import api_view, permission_classes
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from bs4 import BeautifulSoup
-import requests
+from django.contrib.auth.decorators import login_required
 from .forms import SearchForm
 from .services import Parse
-from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 from .models import SavedGoods
-from django.contrib.auth.decorators import login_required
 
-
-
-@api_view(['GET'])
 def index(request): 
     return render(request, 'index.html') 
 
-@api_view(['POST', 'GET'])
 def parse(request):     
     if request.method == 'POST': 
         form = SearchForm(request.POST)        
@@ -39,6 +31,18 @@ def save_good(request):
         
         SavedGoods.objects.create(user=request.user, title=name, price=price, url=url)
         
-        return redirect('home')
-    return redirect('home')
- 
+        return redirect('saved')    
+
+@login_required()
+def saved_good(request):
+    if request.method == 'GET':
+        saved = SavedGoods.objects.filter(user = request.user)
+        return render(request, 'saved.html', {"context":saved})
+    elif request.method == 'POST':
+        saved = SavedGoods.objects.filter(user = request.user, id = request.POST.get('product_id')) 
+        if saved.exists():
+            saved.delete()
+        saved = SavedGoods.objects.filter(user = request.user) 
+        return render(request, 'saved.html', {"context":saved})
+    
+

@@ -2,7 +2,7 @@ db.sqlite3
 __pycache__/
 # C extensions
 *.so
-
+*.py[cod]
 # Distribution / packaging
 bin/
 build/
