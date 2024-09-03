@@ -2,12 +2,11 @@
 
 {% load static %}
 {% block content %}
-
-
-<form method="post">    
+<div class="parent-sign-up">
+<form method="post" class="login_form">    
     {% csrf_token %}{{ form }}
-    <p>Don`t have an account? Click here to <a href="account/sign-up">register</a></p>
+    <p>Don`t have an account? Click here to <a href="{% url 'sign_up' %}">register</a></p>
     <button type="submit" >Login</button>    
 </form>
-
+</div>
 {% endblock %}

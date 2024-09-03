@@ -3,14 +3,12 @@
   <ul>
     <li><a href="{% url 'home' %}">Home</a></li>
     <li><a href="{% url 'parse' %}">Parse</a></li>    
-    {% if user.is_authenticated %}
-
-      
-
+    {% if user.is_authenticated %}      
+      <li><a href="{% url 'saved' %}">Saved</a></li>
       <li class="logout_form">
         <form class ="logout_form" method="post" action="{% url 'logout' %}">
         {% csrf_token %}
-        <button type="submit">logout</button>
+        <button type="submit" ><img src="{% static 'images/exit.png' %}"  /></button>
        </form>
       </li>
       <span>{{ user.username }} |</span> 

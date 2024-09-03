@@ -2,25 +2,23 @@
 {% load static %}
 
 {% block content %}
-
-<div class="response">
-    {% for product_name, product_price, product_url in product %}    
-    <form method="post" action="{% url 'save_good' %}">
-        {% csrf_token %}
-        <input type="hidden" name="product_name" value="{{ product_name }}">
-        <input type="hidden" name="product_price" value="{{ product_price }}">
-        <input type="hidden" name="product_url" value="{{ product_url }}">
-        <p>        
-            <span class="items">
-                {{ product_name }} 
-                <span class="price">
-                    {{ product_price }}                
-                </span>
-            </span> 
-            <a href="{{ product_url }}" >Click here to see in store</a>
-            <button type="submit">Save Good</button> <!-- Button to trigger saving -->
-        </p>
-    </form>                 
+<div class="response">  
+    {% for object in context %}         
+            <form method="post" action="" > 
+                <p>
+                    <span class="items">
+                        {{object.title}}
+                        <span class="price">
+                            {{object.price}}               
+                        </span>
+                    </span> 
+                    <a href="{{object.url}}" >Click here to see in store</a>
+                    
+                {% csrf_token %}             
+                <input type="hidden" name="product_id" value="{{ object.id }}" >
+                <button type="submit" class="save-delete">Delete Good</button>
+            </p>
+            </form>              
     {% endfor %}          
-</div> 
+</div>  
 {% endblock %}
