@@ -2,14 +2,12 @@
 {% load static %}
 
 {% block content %}
-    <div class="parse_page">
-        <div class="wrap">    
+    <div class="parse_page">           
             <form action="" method="post" class="form">    
             {% csrf_token %}    
             {{ form }}
             <input type="submit" value="find" class="button-find">
-            </form>
-        </div> 
+            </form>        
         <h>Make a promt to campare prices for any goods</h>        
     </div> 
 {% endblock %}

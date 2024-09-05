@@ -22,33 +22,43 @@ body{
 .parse_page{
   display: flex; 
   font-size: 5rem; 
-  overflow: hidden;
-  
+  overflow: hidden;  
   .form{ 
     background-color:#404041;  
     border-radius: 1rem; 
-    div{        
-      margin-left: 2rem;
-      margin-top: 2rem;     
-      border-radius: 1rem;      
+    min-width: 25rem;
+    max-height: 25rem;
+    div{            
+      border-radius: 1rem;    
+      padding-top: 0rem;  
     }  
     label{
-      font-size: 1rem;
-      
+      font-size: 1.3rem;      
     }  
-  } 
-  .checkbox{
-    div{
-      max-height: 0.2rem;
-      margin-top: 0;
-      background-color: blue;
+  }   
+   
+  fieldset{    
+    legend{
+      padding: 0%;
     }
-  }
-  fieldset{
-    background-color: brown;
-  }
-  
-  
+    .checkbox{ 
+      padding: 0%;     
+      div{
+        background-color: #76c2e7;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.2rem;
+        max-height: 2rem;
+        padding-bottom: 0;
+      }
+      label{
+        margin-top: 0rem;
+        max-height: 0.2rem;
+        align-self: start;
+      }      
+    }
+  }    
   .input {
     font-weight: 500;
     font-size: .8vw;
@@ -59,44 +69,38 @@ body{
     border: none;
     outline: none;
     padding: 0.4vw;
-    max-width: 190px;
+    max-width: 17rem;
     transition: .4s;
     margin-left: 1rem;
   }  
   .input:focus {
     box-shadow: 0 0 0 .15vw rgb(255, 255, 255);
   }
-  
-  .wrap{
-    min-width: 30%;
-    margin-left: 2rem;  
-    
-    .button-find{
-      
-      border-radius: 1rem;
-      background-color: #2e2d2d;
-      border: none;
-      color: #FFFFFF;
-      text-align: center;
-      font-size: 17px;
-      padding: 16px;
-      width: 130px;
-      transition: all 0.5s;
-      
-      margin: 5px auto;
-     }
-  
-    .button-find:hover{
-      background-color: #484848;
-    }
+  .button-find{      
+    border-radius: 1rem;
+    background-color: #2e2d2d;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 17px;
+    padding: 16px;
+    width: 130px;
+    transition: all 0.5s;      
+    margin: 5px auto;
+   }
+
+  .button-find:hover{
+    background-color: #484848;
   }
+  
+
 }
 
+/* result of parsing */
 .response{  
   margin: 0 auto; 
   width: 80%;  
-  p{
-    
+  p{    
     margin-left: 2rem;
     margin-top: 2rem;
     background-color:#404041;
@@ -121,22 +125,20 @@ body{
     button:hover{
       background-color: #484848;
     }
-  }
-
-    
+  }    
 }
 
 .price{  
   float: right;
 }
 
-nav {  
+nav{  
   width: 60rem;  
   margin: 1rem auto 0;
 }
 
+/* logout button  */
 button{
-
   img{
     display: block;
     height: 2rem;  
@@ -190,12 +192,10 @@ nav ul a:hover {
 
 .btn_reg{
   background-color: rgb(128, 128, 128);
-  color:rgb(42, 92, 137);
-  
+  color:rgb(42, 92, 137);  
 }
 
-.login_form{
-  
+.login_form{  
   min-height: 12rem;
   width: 20rem;
   display: flex;
@@ -216,7 +216,10 @@ nav ul a:hover {
     padding: 0 1rem;
     border: 2px solid transparent;
     font-size: 1rem;
-    transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s, background .2s cubic-bezier(.25,.01,.25,1) 0s;
+    transition: 
+      border-color .3s cubic-bezier(.25,.01,.25,1) 0s, 
+      color .3s cubic-bezier(.25,.01,.25,1) 0s, 
+      background .2s cubic-bezier(.25,.01,.25,1) 0s;
     color: #05060f99;
   }
 
@@ -268,10 +271,29 @@ nav ul a:hover {
     margin-left: 30px;
   }
   
+  .errorlist {    
+    background-color: #f7a9af; 
+    border: 1px solid #f5c6cb; 
+    padding: 10px; 
+    border-radius: 5px; 
+    font-weight: bold; 
+  }
+  
+  .errorlist li {
+    list-style-type: none; 
+    margin: 5px 0; /
+  }
 }
 
-.logout_form{
-  
+.errorlist {    
+  background-color: #f7a9af; 
+  border: 1px solid #f5c6cb; 
+  padding: 10px; 
+  border-radius: 5px; 
+  font-weight: bold; 
+}
+
+.logout_form{  
   button{
     width: 70px;        
     border: none;
@@ -294,8 +316,7 @@ nav ul a:hover {
   padding-top: 5%;    
 }
 
-.sign-up{
-  
+.sign-up{  
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -314,7 +335,10 @@ nav ul a:hover {
     padding: 0 1rem;
     border: 2px solid transparent;
     font-size: 1rem;
-    transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s, background .2s cubic-bezier(.25,.01,.25,1) 0s;
+    transition: 
+    border-color .3s cubic-bezier(.25,.01,.25,1) 0s, 
+    color .3s cubic-bezier(.25,.01,.25,1) 0s, 
+    background .2s cubic-bezier(.25,.01,.25,1) 0s;
     color: #05060f99;
   }
   
@@ -342,8 +366,7 @@ nav ul a:hover {
     color: #05060fc2;
   }
 
-  button {
-    
+  button {    
     border-radius: 4px;
     background-color: #2e2d2d;
     border: none;
@@ -352,16 +375,13 @@ nav ul a:hover {
     font-size: 17px;
     padding: 16px;
     width: 130px;
-    transition: all 0.5s;
-    
+    transition: all 0.5s;    
     margin: 5px auto;
    }
 
   button:hover{
     background-color: #484848;
-  }
-   
-  
+  } 
 }
 
 .helptext{
