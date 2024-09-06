@@ -13,12 +13,45 @@
       onload="this.rel = 'stylesheet'"
     />
     <link rel="shortcut icon" type="image/ico" href="{% static 'images/favicon.ico' %}">
+    
 
     
 </head>
 <body>
     {% include 'partials/header.html' %}
-    <main>{% block content %}{% endblock %}</main>
+    <main>
+      {% block content %}
+      <article class="useTable">
+
+        <div class="infoUse">
+          <h>How it works?</h>
+          <p class="inline-steps">
+            1 Open parse page <br/>
+            2 Choose site <br/>
+            3 Write good's name to find
+            
+          </p>
+          <p>Available sites</p>
+          <img src="https://images.prom.ua/5743708202_w2048_h2048_stav_desktop_h3.png?fresh=1" class="sitesImages">
+          <img src="	https://i.allo.ua/media/theme/default/Logo_Allo_white_2.svg" class="sitesImages">
+          <img src="{% static 'images/olx.png' %}" class="sitesImages" id="olx">
+        </div>
+
+        <img src="{% static 'images/arrow.png' %}" >
+        
+        <div class="infoUse">
+          1
+        </div>
+        
+        <img src="{% static 'images/arrow.png' %}" >
+
+        <div class="infoUse">
+          2
+        </div>
+
+      </article>
+      {% endblock %}
+    </main>
     
 </body>
 </html>

@@ -11,7 +11,7 @@
         <button type="submit" ><img src="{% static 'images/exit.png' %}"  /></button>
        </form>
       </li>
-      <span>{{ user.username }} |</span> 
+      <span>{ {{ user.username }} }</span> 
 
     {% else %}
       <li id="register"><a href="{% url 'login' %}">Login</a></li>
