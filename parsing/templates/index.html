@@ -40,13 +40,15 @@
         <img src="{% static 'images/arrow.png' %}" >
         
         <div class="infoUse">
-          1
+          <p class="inline-second-chunk">Save any position that has the best price<br/>(Only for authorized users)</p>
+          { <a class="inline-second-chunk" href="{% url 'login' %}">Log in</a> }<br/>
+          { <a class="inline-second-chunk" href="{% url 'sign_up' %}">Register</a> }
         </div>
         
         <img src="{% static 'images/arrow.png' %}" >
 
         <div class="infoUse">
-          2
+          <p class="inline-second-chunk">Each parsed items has link for store where that good could be sold</p>
         </div>
 
       </article>

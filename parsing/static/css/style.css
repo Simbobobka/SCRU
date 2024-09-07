@@ -218,6 +218,15 @@ nav ul a:active {
     padding-left: 2rem; 
     line-height: 1.6;
   }
+
+  a{       
+    color: #ffffff; 
+  } 
+
+  .inline-second-chunk{
+    padding: 2rem;       
+  }
+
   .sitesImages{    
     display: flexbox;
     margin-top: 0.5rem;    
