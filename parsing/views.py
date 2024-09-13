@@ -15,7 +15,13 @@ def parse(request):
         if form.is_valid():               
             parse = Parse(form.cleaned_data.get('site'), form.cleaned_data['product'])                  
             parse.make_request()  
-            context = zip(parse.cleaned_data_name, parse.cleaned_data_price, parse.cleaned_data_url)                         
+            context = []        
+            for site in form.cleaned_data.get('site'):
+                context.extend(zip(
+                    parse.data[site]['names'], 
+                    parse.data[site]['prices'], 
+                    parse.data[site]['urls']
+                ))            
             return render(request, 'home.html', {"product" : context})        
 
     elif request.method == 'GET':
