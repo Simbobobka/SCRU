@@ -5,22 +5,29 @@ from django.contrib.auth.decorators import login_required
 from .forms import SearchForm
 from .services import Parse
 from .models import SavedGoods
-
+import time
 def index(request): 
     return render(request, 'index.html') 
+#prom 2.2923262119293213 seconds
+#allo 4.25605320930481 seconds
+#olx 3.3420932292938232 seconds
+
 
 def parse(request):     
     if request.method == 'POST': 
         form = SearchForm(request.POST)        
         if form.is_valid():               
-            parse = Parse(form.cleaned_data.get('site'), form.cleaned_data['product'])                  
+            parse = Parse(form.cleaned_data.get('site'), form.cleaned_data['product'])    
+            start_time = time.time()              
             parse.make_request()  
+            print(f"Done in {time.time() - start_time} seconds")
             context = []        
             for site in form.cleaned_data.get('site'):
                 context.extend(zip(
                     parse.data[site]['names'], 
                     parse.data[site]['prices'], 
-                    parse.data[site]['urls']
+                    parse.data[site]['urls'],
+                    parse.data[site]['images']
                 ))            
             return render(request, 'home.html', {"product" : context})        
 
