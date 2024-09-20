@@ -1,12 +1,17 @@
 {% extends 'index.html' %}
 
 {% load static %}
+
 {% block content %}
+
 <div class="parent-sign-up">
+
 <form method="post" class="sign-up">    
     {% csrf_token %}{{ form }}
     <p>Have an account? Click to <a href="account/login">login</a></p>
     <button type="submit" class="btn btn-success">register</button>    
 </form>
+
 </div>
+
 {% endblock %}
