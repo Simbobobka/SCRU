@@ -16,12 +16,19 @@ class Parse:
         "allo": "product-card__title",
         "olx": "css-1wxaaza",
     }
-    site_classes_of_price = {"prom": "bkjEo", "allo": "v-pb__cur", "olx": "css-13afqrm"}
+
+    site_classes_of_price = {
+        "prom": "bkjEo", 
+        "allo": "v-pb__cur",
+        "olx": "css-13afqrm"
+    }
+    
     site_classes_of_url = {
         "prom": "_0cNvO jwtUM",
         "allo": "product-card__title",
         "olx": "css-1ut25fa",
     }
+    
     site_classes_of_images = {
         "prom": "DucV3 _0-uxM Zd5Aq",
         "allo": "is-active",
