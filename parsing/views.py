@@ -18,7 +18,7 @@ def parse(request):
             parse = Parse(form.cleaned_data.get("site"), form.cleaned_data["product"])
             async_to_sync(parse.make_request)()
             context = []
-
+            
             for site in form.cleaned_data.get("site"):
                 context.extend(
                     zip(
@@ -41,8 +41,9 @@ def save_good(request):
         name = request.POST.get("product_name")
         price = request.POST.get("product_price")
         url = request.POST.get("product_url")
-
-        SavedGoods.objects.create(user=request.user, title=name, price=price, url=url)
+        url_img = request.POST.get("product_image")
+        print(url_img)
+        SavedGoods.objects.create(user=request.user, title=name, price=price, url=url, image=url_img)
 
         return redirect("saved")
 
