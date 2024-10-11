@@ -42,7 +42,6 @@ def save_good(request):
         price = request.POST.get("product_price")
         url = request.POST.get("product_url")
         url_img = request.POST.get("product_image")
-        print(url_img)
         SavedGoods.objects.create(user=request.user, title=name, price=price, url=url, image=url_img)
 
         return redirect("saved")

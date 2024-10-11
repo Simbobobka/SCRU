@@ -1,12 +1,14 @@
 from pathlib import Path
+import environ
+env = environ.Env()
+environ.Env.read_env()
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-3&5)+u_8t@mbdju%^1)p0jrxk7idw+v3yis@%=a%_t5(^2-g0*"
 
-# SECURITY WARNING: don't run with debug turned on in production!
+SECRET_KEY = env("SECRET_KEY")
+
+
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -60,9 +62,13 @@ WSGI_APPLICATION = "SCRU.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': env("DB_NAME"),
+        'USER': env("DB_USER"),
+        'PASSWORD': env("DB_PASSWORD"),
+        'HOST': env("DB_HOST"),
+        'PORT': env("DB_PORT"),
     }
 }
 

@@ -33,12 +33,35 @@ Response:
 - [Beautifulsoup4](https://tedboy.github.io/bs4_doc/) - is a Python library for pulling data out of HTML and XML files. 
 - [Aiohttp](https://docs.aiohttp.org/en/stable/) - Asynchronous HTTP Client/Server for asyncio and Python.
 - ~~Requests~~(changed later by asynchronous library).
+- [Postgresql](https://www.postgresql.org/) - is a free and open-source relational database management system emphasizing extensibility and SQL compliance.
 
 #### Setup project
 Install dependencies (you should have [pipenv](https://pipenv.pypa.io/en/latest/) installed):
 ```pipenv install```
 Activate virtual environment: 
 ```pipenv shell```
+
+This project uses environment variables for sensitive configurations like database credentials and the Django secret key. You should create a ```.env``` file in the project’s root directory to store these values.
+
+###### Prerequisites
+Create database in __PostgreSQL__ before filing ```.env```.
+
+Add the following lines to your ```.env``` file, replacing the placeholders with actual values:
+
+>DB_NAME=your_database_name
+DB_USER=your_database_user
+DB_PASSWORD=your_database_password
+DB_HOST=your_database_host
+DB_PORT=your_database_port
+SECRET_KEY=your_django_secret_key
+
+__Tip:__ For users cloning the project from GitHub, you should generate your own secret key. You can generate a new Django secret key using the following Python script:
+```
+import secrets
+print(secrets.token_urlsafe(50))
+```
+Run this script and copy the output into your ```.env``` file under the ```SECRET_KEY``` variable.
+
 Perform migration:
 ```python manage.py makemigrations```
 ```python manage.py migrate```

@@ -8,6 +8,8 @@ beautifulsoup4 = "*"
 requests = "*"
 aiohttp = "*"
 black = "*"
+django-environ = "*"
+psycopg2 = "*"
 
 [dev-packages]
 
