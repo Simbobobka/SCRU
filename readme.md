@@ -47,13 +47,14 @@ This project uses environment variables for sensitive configurations like databa
 Create database in __PostgreSQL__ before filing ```.env```.
 
 Add the following lines to your ```.env``` file, replacing the placeholders with actual values:
-
->DB_NAME=your_database_name
+```
+DB_NAME=your_database_name
 DB_USER=your_database_user
 DB_PASSWORD=your_database_password
 DB_HOST=your_database_host
 DB_PORT=your_database_port
 SECRET_KEY=your_django_secret_key
+```
 
 __Tip:__ For users cloning the project from GitHub, you should generate your own secret key. You can generate a new Django secret key using the following Python script:
 ```
